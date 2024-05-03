@@ -1,0 +1,19 @@
+
+<div class="container m-3">
+  <div class="row">
+    <div class="col-3">
+        <div *ngIf="showParent">
+            <p *ngFor="let item of data" (click)="sendData(item)">{{ item?.name }}</p>
+          </div>
+          <app-relation *ngIf="!showParent" [fam]="sdata" (close)="open()"></app-relation>
+      <input
+        type="password"
+        class="form-control mb-2 border border-secondary"
+        (input)="textt($event)" />
+      <p>{{ namee }}</p>
+
+      <button class="btn btn-primary" (click)="secret = !secret">Submit</button>
+      <p *ngIf="secret">Password= Ilaks</p>
+    </div>
+  </div>
+</div>
